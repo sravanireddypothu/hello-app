@@ -1,11 +1,16 @@
 pipeline {
     agent any
 
+    tools {
+        jdk 'JDK21'
+        maven 'Maven'
+    }
+
     stages {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/sravanireddypothu/hello-app'
+                url: 'https://github.com/sravanireddypothu/hello-app.git'
             }
         }
 
